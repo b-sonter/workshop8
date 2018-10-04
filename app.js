@@ -17,3 +17,5 @@ MongoClient.connect(url, function(err, db){
   console.log("Succesfully connected to " + my_database);
   db.close();
 });
+
+require('./create.js')(MongoClient, url);
