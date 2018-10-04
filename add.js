@@ -22,4 +22,19 @@ module.exports = function(MongoClient, url){
       });
       db.close();
     });
+
+    this.MongoClient.connect(this.url, function(err, db){
+      if(err) throw err;
+
+      let dbo = db.db("mydb");
+      //check data is input
+      dbo.collection("products").find({}).toArray(function(err, result){
+        if(err) throw err;
+
+        console.log(result);
+
+        db.close();
+      });
+    });
+
   }
