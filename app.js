@@ -19,3 +19,4 @@ MongoClient.connect(url, function(err, db){
 });
 
 require('./create.js')(MongoClient, url);
+require('./add.js')(MongoClient, url);
