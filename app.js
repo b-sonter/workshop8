@@ -19,7 +19,7 @@ MongoClient.connect(url, function(err, db){
 });
 
 require('./create.js')(MongoClient, url);
-require('./add.js')(MongoClient, url);
+//require('./add.js')(MongoClient, url);
 require('./remove.js')(MongoClient, url);
-require('./update.js')(MongoClient, url);
-require('./read.js')(MongoClient, url);
+//require('./update.js')(MongoClient, url);
+//require('./read.js')(MongoClient, url);
