@@ -1,4 +1,4 @@
-//a set of data is removed from the database
+//a set of data is edited in the database
 module.exports = function(MongoClient, url){
   this.MongoClient = MongoClient;
   this.url = url;
@@ -7,12 +7,13 @@ module.exports = function(MongoClient, url){
     if(err) throw err;
 
     let dbo = db.db("mydb");
-    query = {name:"carrot"}
-    dbo.collection("products").remove(query, function(err, res){
+    query = {name:"apple"}
+    update = {$set : {price:0.75}}
+    dbo.collection("products").updateOne(query, update, function(err, res){
       if(err) throw err;
 
       else{
-        console.log("Removed carrot from products.");
+        console.log("Updated apple from products.");
       }
     });
     db.close();
